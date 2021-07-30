@@ -13,7 +13,7 @@ const htmlMinTransform = require("./src/transforms/html-min-transform.js");
 const api = new ghostContentAPI({
   url: process.env.GHOST_API_URL,
   key: process.env.GHOST_CONTENT_API_KEY,
-  version: "v2"
+  version: "v3"
 });
 
 // Strip Ghost domain from urls
@@ -103,6 +103,11 @@ module.exports = function(config) {
 
       // Convert publish date into a Date object
       post.published_at = new Date(post.published_at);
+      post.published_on = new Date(post.published_at).toLocaleDateString('en-GB', {
+    day:   'numeric',
+    month: 'long',
+    year:  'numeric',
+});
     });
 
     // Bring featured post to the top of the list

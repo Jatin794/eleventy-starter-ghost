@@ -13,6 +13,7 @@
         {% endif %}
         <section class="post-full-content">
             <h1 class="content-title">{{ title }}</h1>
+            <i> Allegedly published on <span>{{ post.published_on }}</span> </i> <p>
             <section class="content-body load-external-scripts">
                 {{ content | safe }}
             </section>
