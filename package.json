@@ -40,7 +40,6 @@
     "dotenv": "^8.0.0",
     "eleventy-plugin-lazyimages": "liamfiddler/eleventy-plugin-lazyimages",
     "@11ty/eleventy-img": "latest",
-    "@11ty/eleventy-cache-assets": "latest",
     "eslint-utils": "3.0.0",
     "html-minifier": "^4.0.0"
   },

@@ -4,7 +4,6 @@ const cleanCSS = require("clean-css");
 const fs = require("fs");
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const Image = require("@11ty/eleventy-img");
-const Cache = require("@11ty/eleventy-cache-assets");
 const lazyImages = require("eleventy-plugin-lazyimages");
 const ghostContentAPI = require("@tryghost/content-api");
 
@@ -34,18 +33,6 @@ module.exports = function(config) {
     cacheFile: ""
   });
 
-module.exports = async function() {
-  let url = "https://api.github.com/repos/11ty/eleventy";
-
-  /* This returns a promise */
-  return Cache(url, {
-    duration: "1m", // save for 1 month
-    type: "json"    // we’ll parse JSON for you
-  });
-};
-
-  console.log( stats );
-})();
 
   // Inline CSS
   config.addFilter("cssmin", code => {
